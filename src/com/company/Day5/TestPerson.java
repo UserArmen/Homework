@@ -7,5 +7,8 @@ public class TestPerson {
         Person person3 = new Person();
         Person person4 = new Person();
         System.out.println(Person.id);
+        final int d;
+        new Person();
+
     }
 }

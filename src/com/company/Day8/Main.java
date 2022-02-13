@@ -38,7 +38,7 @@ a.equalsCount();
     /**
      * 2
      * Write a Java program to determine whether an input number is an
-     * even number.
+     * even number.         isEven
      */
 
     void print() {
