@@ -51,31 +51,28 @@ public class Main {
      * display anything.
      */
     public static void printOfsquares(int a, int b) {
-        for (int i = a; i < b; i++) {
-            if (i * i <= b) {
-                System.out.println(i);
+        for (int i = a; i <= b; i++) {
+            if (Math.sqrt(i) == (int) Math.sqrt(i)) {
+                System.out.println(i + " ");
             }
         }
     }
+
 
     /**
      * 4.Enters 2 integer numbers : x and d from console
      * Count and print one number - how many times the digit d occurs in
      * the representation of a natural number x.
      */
-    public static void printOfcount(int a, int b) {
-        if (a > 9 && b > 9) {
-            System.out.println("eror");
-            return;
-        }
+    public static int printOfcount(int x, int b) {
         int count = 0;
-        for (int i = a; i < b; i += a) {
-            count++;
+        for (int i = x; i != 0; i /= 10) {
+            if (i % 10 == b) {
+                count++;
+            }
+
         }
-        for (int i = b; i < a; i += b) {
-            count++;
-        }
-        System.out.println(count);
+        return count;
     }
 
     /**
@@ -91,7 +88,6 @@ public class Main {
             rev_num = rev_num * 10 + number % 10;
             number = number / 10;
             if (number < 1) {
-                System.out.println(rev_num);
                 return rev_num;
 
             }
@@ -117,7 +113,7 @@ public class Main {
 
 
 /**
- * 77.Given an integer number x
+ * 7.Given an integer number x
  * Print all natural divisors of the number x in ascending order (including 1
  * and the number itself).
  */
@@ -125,14 +121,12 @@ public class Main {
 
     public static void printOfdivisors(int x) {
 
-        for (int i = 1; i <= x; i++) {
+        for (int i = 1; i <= x / 2; i++) {
             if (x % i == 0) {
                 System.out.println(i);
             }
-
         }
-
-
+        System.out.println(x);
     }
 
     /**
@@ -141,20 +135,20 @@ public class Main {
      * itself; x≤2 ∗ 109).
      */
 
-    public static void countNumberOfNaturalDivisorsOfX(int n) {
+    public static int countNumberOfNaturalDivisorsOfX(int n) {
 
-        int count = 0;
-        if (n <= 2 * 109) {
-            for (int i = 1; i <= n; i++) {
-
-                if (n % i == 0) {
-                    count++;
-                }
-
+        int count = 1;
+        for (int i = 1; i * 2 <= n; i++) {
+            if (n % i == 0) {
+                count += 2;
             }
-            System.out.println(count);
+            if (n / i == i) {
+                count--;
+            }
         }
+        return count;
     }
+
 
     /**
      * 9.Calculate the sum of the given 10 natural numbers.
@@ -176,27 +170,18 @@ public class Main {
      * 10
      * Convert a natural number from binary to decimal (no more than 10
      * digits in a binary number).
+     *
+     * @param bin
      */
-    public static int numberFromBinaryToDecimal(int n) {
+    public static int numberFromBinaryToDecimal(int bin) {
 
-        int num = n;
-        int dec_value = 0;
-
-
-        int base = 1;
-
-        int temp = num;
-        while (temp > 0) {
-            int last_digit = temp % 10;
-            temp = temp / 10;
-
-            dec_value += last_digit * base;
-
-            base = base * 2;
+        int dec = 0;
+        int pow = 1;
+        for (int num = bin; num != 0; num /= 10) {
+            dec += (pow * num % 10);
+            pow <<= 1;
         }
-
-        return dec_value;
-
+        return dec;
     }
 
     /**
@@ -235,6 +220,20 @@ public class Main {
     }
 
     /**
+     * 12
+     */
+    public static void generateSequence(int second) {
+        int count = 0;
+        for (int i = 1; i <= second && count <= second; i++) {
+            for (int j = 0; j < i && count < second; j++) {
+                System.out.print(i + " ");
+                count++;
+            }
+
+        }
+    }
+
+    /**
      * 13
      * Write a Java program by using two for loops to produce the output
      * shown below:
@@ -256,4 +255,48 @@ public class Main {
         }
     }
 
-}
+    /**
+     * 14
+     */
+    public static void printCheckerboardPattern(int n) {
+        String row = " ";
+        for (int i = 0; i < n; i++) {
+            row += "#";
+        }
+        for (int i = 0; i < n; i++) {
+            if ((i & i) == 1) {
+                System.out.println(" ");
+            }
+            System.out.println(row);
+        }
+    }
+
+/**
+ * 15
+ */
+public  static void esiminch(int n) {
+    for (int i = 0; i <= n; i++) {
+        if (i == 0) {
+            System.out.print(" * | ");
+        } else {
+            System.out.print(i + "   ");
+        }
+    }
+
+    System.out.print("\n_____________________________\n");
+    for (int i = 1; i <= n; i++) {
+        if (i < 10) {
+            System.out.print(" " + i + " |");
+        } else {
+            System.out.print(i + " |");
+        }
+        for (int j = 1; j <= n; j++) {
+            if (i * j < 10) {
+                System.out.printf("%2d  ", (i * j));
+            } else {
+                System.out.printf(" %2d ", (i * j));
+            }
+        }
+        System.out.println();
+    }
+}}

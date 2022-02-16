@@ -5,9 +5,8 @@ import java.util.Scanner;
 
     public class Main {
         public static void main(String[] args) {
-            int x = 958;
-            String o = "jfkn";
-            o.indexOf(3);
+            computeSumOfDigits(1234);
+
         }
 
         /**
@@ -54,11 +53,24 @@ import java.util.Scanner;
          * number from console
          */
         public static int smallestDivisor(int n) {
-            int k = 1;
-            while (n % k != 0) {
-                k++;
+
+            if (n % 2 == 0) {
+                return 2;
             }
-            return k;
+
+            int i = 3;
+            while (i * i <= n) {
+
+                if (n % i == 0) {
+
+                    return i;
+
+                }
+
+                i += 2;
+            }
+
+            return n;
 
         }
 
@@ -69,10 +81,9 @@ import java.util.Scanner;
         public static void powerOfTwo(int x) {
             int k = 1;
             while (k <= x) {
+                System.out.println(k);
                 k = k << 1;
-                if (k < x) {
-                    System.out.println(k);
-                }
+
             }
         }
 
@@ -93,14 +104,12 @@ import java.util.Scanner;
          * 2 in descending order.
          */
         public static void multipleOf2(int n) {
-            int k = 1;
-
-            while (n > k) {
-                k++;
-                if (k % 2 == 0) {
-                    System.out.println(n - k);
-                }
-
+            if (n % 2 != 0) {
+                n--;
+            }
+            while (n >= 2) {
+                System.out.println(" " + n);
+                n -= 2;
             }
 
         }
@@ -159,9 +168,9 @@ import java.util.Scanner;
         public static void printSymbol() {
             int first = 32;
             int second = 122;
-            while (first < second) {
+            while (first <= second) {
                 char ch = (char) first;
-                System.out.print(ch);
+                System.out.print(ch + " ");
                 if (ch % 10 == 2) {
                     System.out.println("\n");
                 }
@@ -171,9 +180,8 @@ import java.util.Scanner;
         }
 
         /**
-         *
-         11.Print all integer numbers from 1 to N, except that are multiple of
-         3(Input N from console)
+         * 11.Print all integer numbers from 1 to N, except that are multiple of
+         * 3(Input N from console)
          */
 
         public static void multipleOfThree() {
@@ -187,12 +195,36 @@ import java.util.Scanner;
                 }
                 System.out.println(i);
             }
+
         }
-/**
- * 12.Given integer number A &gt; 1,define what is the Fibonacci number
- * is A, i.e print such number n that φn=A.If A is not a Fibonacci
- * number print -1.
- */
+
+        /**
+         * 12.Given integer number A &gt; 1,define what is the Fibonacci number
+         * is A, i.e print such number n that φn=A.If A is not a Fibonacci
+         * number print -1.
+         */
+
+        public static void fibonacci(int k) {
+
+            int i, n1 = 0, n2 = 1, n3;
+            // System.out.print(n1+" "+n2);
+            int count = 0;
+            for (i = 2; i < k + 1; ++i) {
+                n3 = n1 + n2;
+                // System.out.print(" "+n3);
+                n1 = n2;
+                n2 = n3;
+                count++;
+                if (n3 == k) {
+                    System.out.println("F(" + i + ") = " + k);
+                    return;
+                }
+            }
+            if (count >= k - 1) {
+                System.out.println(-1);
+            }
+
+        }
 
         /**
          * 13.On the first day, the athlete ran x kilometers,and then every day
@@ -200,10 +232,90 @@ import java.util.Scanner;
          * number y, determine the number of the day for which the athlete&#39;s
          * mileage will be at least y kilometers.
          */
-/**
- * Write a Java Program to Compute the Sum of Digits in a given
- * Integer.
- */
 
+        public static int athleteMileage(double x, double y) {
+            int days = 1;
+            while (x < y) {
+                x = x + x * 0.1;
+                days++;
+            }
+            return days;
+        }
+
+        /**
+         * 14
+         * Write a Java Program to Compute the Sum of Digits in a given
+         * Integer.
+         */
+        public static int depozidBank(double x, double y) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Input num: ");
+            int i = scanner.nextInt();
+            int days = 1;
+            while (x < y) {
+                x = x + x * i;
+                days++;
+            }
+            return days;
+        }
+
+        /**
+         * 15.The sequence consists of different natural numbers and ends
+         * with the number 0. Determine the value of the second largest
+         * element in this sequence.
+         */
+        public static void DetermineValueOfSecondLargestElement() {
+        Scanner sc = new Scanner(System.in);
+
+            int max = Integer.MIN_VALUE;
+            int second = 0;
+
+            int num;
+            do {
+
+                num = sc.nextInt();
+                if (num > max) {
+
+                    second = max;
+                    max = num;
+
+                } else if (num > second && num != max) {
+                    second = num;
+
+                }
+            } while (num != 0);
+            System.out.println(second);
+
+        }
+
+
+        /**
+         * 16.Write a program that generates a random number and asks the user
+         * to guess what the number is. If the user’s guess is higher than the
+         * random number, the program should display Too high, try again. If the
+         * user’s guess is lower than the random number, the program should
+         * display Too low, try again. If you find the number print Yes, you
+         * guessed the number.The program should use a loop that repeats
+         * until the user correctly guesses the random number.
+         */
+
+
+        /**17
+         * Write a Java Program to Compute the Sum of Digits in a given
+         * Integer.
+         */
+        public static void computeSumOfDigits(int num){
+
+
+            int sum = 0;
+            while (num>0){
+
+                sum += num%10;
+
+                num/=10;
+
+            }
+
+            System.out.println(sum);
+        }
     }
-
