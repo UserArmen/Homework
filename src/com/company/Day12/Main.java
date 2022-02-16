@@ -1,11 +1,14 @@
 package com.company.Day12;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class Main {
+
+
     public static void main(String[] args) {
-reversOfIndexArray(8);    }
+
+    }
+
     /**
      * 1.Print all elements of the array with even indices (that is, A [0], A
      * [2], A [4]...)
@@ -107,20 +110,20 @@ reversOfIndexArray(8);    }
         Random random = new Random();
         int arrays[] = new int[n];
         int count = 0;
-        int pointer =0;
-        arrays[0]= random.nextInt(500);
-        for (int i = 1; i <arrays.length; i++) {
-            arrays[i]=random.nextInt(500);
+        int pointer = 0;
+        arrays[0] = random.nextInt(500);
+        for (int i = 1; i < arrays.length; i++) {
+            arrays[i] = random.nextInt(500);
 
-            if (arrays[0]<arrays[1]){
+            if (arrays[0] < arrays[1]) {
                 int sum = arrays[1];
-                arrays[1]=arrays[0];
-                arrays[0]=sum;
+                arrays[1] = arrays[0];
+                arrays[0] = sum;
                 pointer = arrays[0];
 
             }
-            if (arrays[i]>pointer){
-                pointer=arrays[i];
+            if (arrays[i] > pointer) {
+                pointer = arrays[i];
                 count = i;
             }
             System.out.println(arrays[i]);
@@ -128,92 +131,96 @@ reversOfIndexArray(8);    }
 
         System.out.println(pointer + "-----------" + count);
     }
+
     /**
      * 7.Print the value of the smallest of all positive elements in the list. It is
      * known that the list contains at least one positive element, and the
      * absolute value of all elements of the list does not exceed 1000.
      */
-    public static void printOfMinimum(int n){
-      int array[] = new int[n];
-      Random random = new Random();
-      array[0] = random.nextInt(1000)-500;
-        int pointer =1000;
-        for (int i = 1; i <array.length ; i++) {
-            array[i] = random.nextInt(1000)-500;
-           if (array[0]>=0&&i==1) {
-               pointer = array[0];
-           }
-           if (array[i]>=0){
-               if (array[i]<pointer){
-                   pointer = array[i];
-               }
-           }
-            System.out.print(array[i]+ " ");
+    public static void printOfMinimum(int n) {
+        int array[] = new int[n];
+        Random random = new Random();
+        array[0] = random.nextInt(1000) - 500;
+        int pointer = 1000;
+        for (int i = 1; i < array.length; i++) {
+            array[i] = random.nextInt(1000) - 500;
+            if (array[0] >= 0 && i == 1) {
+                pointer = array[0];
+            }
+            if (array[i] >= 0) {
+                if (array[i] < pointer) {
+                    pointer = array[i];
+                }
+            }
+            System.out.print(array[i] + " ");
         }
         System.out.println();
 
-        System.out.println(" Min_mum...." + " "+pointer);
-        }
+        System.out.println(" Min_mum...." + " " + pointer);
+    }
 
     /**
      * 8
+     *
      * @param n
      */
-    public static void printOfNumArray(int n){
-        int array [] = new int[n];
+    public static void printOfNumArray(int n) {
+        int array[] = new int[n];
         Random random = new Random();
         int count = (-n);
-            for (int i = 0 ; i <array.length ; i++) {
-                array[i]=random.nextInt(50);
-                System.out.print(array[i] + " ");
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(50);
+            System.out.print(array[i] + " ");
 
-            }
-        System.out.println();
-            for (int i = 0; i < array.length ; i++) {
-                int pointer = array[i];
-                for (int j = 0; j < array.length ; j++) {
-                    if (array[i]==array[j]){
-                        count++;
-                    }
-                }
-
-            }
-
-            System.out.println(n-( count/2));
         }
+        System.out.println();
+        for (int i = 0; i < array.length; i++) {
+            int pointer = array[i];
+            for (int j = 0; j < array.length; j++) {
+                if (array[i] == array[j]) {
+                    count++;
+                }
+            }
+
+        }
+
+        System.out.println(n - (count / 2));
+    }
+
     /**
      * 9
      */
-    public static void reversOfNumArrays(int n){
+    public static void reversOfNumArrays(int n) {
         Random random = new Random();
         int array[] = new int[n];
-        int pointer = n-1;
-        for (int i = 0; i < array.length ; i++) {
+        int pointer = n - 1;
+        for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt(500);
             System.out.print(array[i] + " ");
         }
         System.out.println();
-        System.out.println("Revers.................." );
-        for (int i = pointer; i >0 ; i--) {
-            System.out.print(array[i]+ " ");
+        System.out.println("Revers..................");
+        for (int i = pointer; i > 0; i--) {
+            System.out.print(array[i] + " ");
 
         }
     }
+
     /**
      * 10
      */
-    public static void reversOfIndexArray(int n){
+    public static void reversOfIndexArray(int n) {
         Random random = new Random();
         int array[] = new int[n];
-        int pointer= 0;
-        int count = n-1;
-        for (int i = 0; i < array.length ; i++) {
+        int pointer = 0;
+        int count = n - 1;
+        for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt(500);
             System.out.print(array[i] + " ");
         }
         System.out.println();
-        System.out.println("Revers.................." );
-        for (int i = 0; i < array.length ; i++) {
+        System.out.println("Revers..................");
+        for (int i = 0; i < array.length; i++) {
             pointer = array[i];
             array[i] = array[count];
             array[count] = pointer;
