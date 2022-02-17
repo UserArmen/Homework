@@ -6,8 +6,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-
-    }
+printOfMinimum(9);    }
 
     /**
      * 1.Print all elements of the array with even indices (that is, A [0], A
@@ -23,6 +22,12 @@ public class Main {
                 System.out.println(i);
             }
         }
+    }
+    public static void printArray(int[] arr) {
+        for (int x : arr) {
+            System.out.print(x + " ");
+        }
+        System.out.println();
     }
 
     /**
@@ -228,5 +233,11 @@ public class Main {
             count--;
         }
     }
+
+    /**
+     * 11
+     * @param n
+     */
+
 
 }
