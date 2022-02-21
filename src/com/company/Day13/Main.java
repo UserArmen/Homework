@@ -4,7 +4,40 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        matrixDiagonalOne2(16);
+        /**
+         *        1 1 1 1 1 1 1 1 1 1 1 1 1
+         *        1 1 1 1 1 1 1 1 1 1 1 1 1
+         *        1 1 1 1 1 1 1 1 1 1 1 1 1
+         *        1 1 1 1 1 1 1 1 1 1 1 1 1
+         *        1 1 1 1 1 1 1 1 1 1 1 1 1
+         *        1 1 1 1 1 1 1 1 1 1 1 1 1
+         *        1 1 1 1 1 1 1 1 1 1 1 1 1
+         *        1 1 1 1 1 1 1 1 1 1 1 1 1
+         *        1 1 1 1 1 1 1 1 1 1 1 1 1
+         *        1 1 1 1 1 1 1 1 1 1 1 1 1
+         *        1 1 1 1 1 1 1 1 1 1 1 1 1
+         *        1 1 1 1 1 1 1 1 1 1 1 1 1
+         *
+         *
+         *      int age  = 10;     2* 2x32
+         *      short age  = 10;   2* 2x16
+         *      byte age = 10; 2 2x8
+         *      long age = 10 2x 2x64
+         *
+         *      String name  = new String "Gevorg  ";
+         *
+         */
+
+
+
+
+
+
+
+
+
+
+
     }
     public static void printMaxAndIndex(int[] array) {
         int max = array[0];
